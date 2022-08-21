@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Music Library</title>
+        <link rel="icon" type="image/png" href="img/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+        <meta name="author" content="Toby Butchart">
+        <meta name="description" content="Music made by or with me">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/tab.min.css">
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="tab">
+                    <button
+                        id="defaultOpen"
+                        class="tablinks"
+                        data-img="FL/Future Love.png"
+                        data-content='
+                            [
+                                {"title":"Future Love EP",
+                                    "songs": [
+                                        "FL/No Rock n&#39; Roll",
+                                        "FL/Crazy World",
+                                        "FL/Give It To Me"
+                                    ]
+                                }
+                            ]'
+                        data-blurb='["Future Love are a dance duo from Norwich.", "Having been described by drum and bass producer FLAT-T as GENIUS, they took the world by mild surprise with their debut single No Rock n&#39; Roll in 2011."]'
+                        onclick="openBand(event)"
+                    >Future Love</button>
+                    <button
+                        class="tablinks"
+                        data-img="OLL/OneLastLaugh.png"
+                        data-content='
+                            [
+                                {"title":"Won&#39;tLastLong",
+                                    "songs": [
+                                        "OLL/WLL/20Years",
+                                        "OLL/WLL/CatWith9Lives",
+                                        "OLL/WLL/KillTheGirl",
+                                        "OLL/WLL/NoTime",
+                                        "OLL/WLL/SleepWalkingAngel",
+                                        "OLL/WLL/SunSunFun",
+                                        "OLL/WLL/TakingOverMe",
+                                        "OLL/WLL/OneLastLaugh"
+                                    ]
+                                },
+                                {"title":"OneLastLaugh",
+                                    "songs": [
+                                        "OLL/OLL/BetterDays",
+                                        "OLL/OLL/Don&#39;tLikeMe",
+                                        "OLL/OLL/DownOnYou",
+                                        "OLL/OLL/Go&#33;",
+                                        "OLL/OLL/PeaceOfMind",
+                                        "OLL/OLL/StandAndFight",
+                                        "OLL/OLL/Sun&#44;Sun&#44;Fun",
+                                        "OLL/OLL/StandAndFight-Tobi-Wan-Remix"
+                                    ]
+                                },
+                                {"title":"Didn&#39;tLastLong",
+                                    "songs": [
+                                        "OLL/DLL/20Years",
+                                        "OLL/DLL/IWon&#39;tWait",
+                                        "OLL/DLL/KillTheGirl",
+                                        "OLL/DLL/Let&#39;sGo",
+                                        "OLL/DLL/NowGetUp",
+                                        "OLL/DLL/PickMeUp"
+                                    ]
+                                }
+                            ]'
+                        data-blurb='["OneLastLaugh! are a four piece funk/rock band hailing from the mean streets of Norwich...","They are a funktastic four piece hailing from the fine city, via Detroit and Seattle. Having formed in 2009, Toby, Rowan, Bob and Flatty have spent many happy hours jamming, writing and recording, bringing all of their favourites sounds and individual musical characters together."]'
+                        onclick="openBand(event)"
+                    >OneLastLaugh</button>
+                    <button
+                        class="tablinks"
+                        data-img="JTB/JonnyTheBrave.png"
+                        data-content='
+                            [
+                                {"title":"Eastbound and Down",
+                                    "songs": [
+                                        "JTB/Evil Woman Blues",
+                                        "JTB/The Joker",
+                                        "JTB/Down On You",
+                                        "JTB/Beat Up Your Lover",
+                                        "JTB/I&#39;m a Bum",
+                                        "JTB/Here Comes the Blues Boy",
+                                        "JTB/Born to Lose",
+                                        "JTB/Taxi to Vietnam",
+                                        "JTB/England&#39;s Reign",
+                                        "JTB/Walk On"
+                                    ]
+                                }
+                            ]'
+                        data-blurb='["Jonny the brave is an indie/blues singer and songwriter, he is brave and he sings the blues."]'
+                        onclick="openBand(event)"
+                    >Jonny the Brave</button>
+                    <button
+                        class="tablinks"
+                        data-img="HW/Hookwork.png"
+                        data-content='
+                            [
+                                {"title":"Hookworm",
+                                    "songs": [
+                                        "HW/HW/Exit",
+                                        "HW/HW/BarthTub",
+                                        "HW/HW/Disco Like a Passing Coma"
+                                    ]
+                                },
+                                {"title":"Baby Gone Sour",
+                                    "songs": [
+                                        "HW/BGS/Tricky For Me",
+                                        "HW/BGS/Lesbo Girl",
+                                        "HW/BGS/Blind Man",
+                                        "HW/BGS/Exit"
+                                    ]
+                                }
+                            ]'
+                        data-blurb='[""]'
+                        onclick="openBand(event)"
+                    >Hookworm</button>
+                    <button
+                        class="tablinks"
+                        data-img="TW/untitled.png"
+                        data-content='
+                            [
+                                {"title":"Generative Studies",
+                                    "songs": [
+                                        "TW/Generative Piece in A Flat Minor, No. 5"
+                                    ]
+                                }
+                            ]'
+                        data-blurb='["Written in Pure Data, Generative Piece in A Flat Minor, No. 5 explores generative techniques only using square waves."]'
+                        onclick="openBand(event)"
+                    >tobi-wan</button>
+                </div>
+            </div>
+        </div>
+        <div class="container main-body">
+            <div class="row" id="main-container">
+                <div id="band-container" class="tabcontent">
+                    <div class="hidden-xs col-sm-4" id="blurb-container">
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                        <h1 id="band-name"></h1>
+                        <div class="music-container" id="music-container">
+                            <div class="music-info">
+                                <h4 id="title"></h4>
+                                <div><span id="currTime"></span> - <span id="durTime"></span></div>
+                                <div class="progress-container" id="progress-container">
+                                    <div class="progress" id="progress"></div>
+                                </div>
+                            </div>
+                            <audio id="audio"></audio>
+                            <div class="img-container" id="song-img-container">
+                            </div>
+                            <div class="navigation">
+                                <button id="prev" class="action-btn">
+                                    <i class="fas fa-backward"></i>
+                                </button>
+                                <button id="play" class="action-btn action-btn-big">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button id="next" class="action-btn">
+                                    <i class="fas fa-forward"></i>
+                                </button>
+                            </div>
+                            <div class="music-info-btm"  id="track-listing-container">
+                                <table id="track-listing">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/global.min.js"></script>
+        <script type="text/javascript" src="js/script.min.js"></script>
+    </body>
+</html>

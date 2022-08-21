@@ -1,0 +1,13 @@
+# Log files
+*.log
+
+# Text files
+*.txt
+!robots.txt
+
+# Temp files
+*.tmp
+
+# Temp directories
+temp/
+tmp/
