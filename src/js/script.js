@@ -317,7 +317,7 @@ function openBand(evt) {
                 const download = document.createElement("a");
                 download.href = "music/" + content[albumCount].songs[songCount] + ".mp3";
                 download.innerHTML = "Download";
-                download.download = "music/" + content[albumCount].songs[songCount] + ".mp3";
+                download.download = sanitiseText(content[albumCount].songs[songCount]) + ".mp3";
                 td2.appendChild(download);
 
                 row.appendChild(td1);
