@@ -219,6 +219,7 @@ function openBand(evt) {
         const name = e.innerText;
         const img = "img/" + e.dataset.img;
         const blurb = JSON.parse(e.dataset.blurb);
+        const disableDownload = e.dataset.disableDownload;
         content = JSON.parse(e.dataset.content);
 
         log(e);
@@ -314,11 +315,13 @@ function openBand(evt) {
                 td1.innerHTML = (songCount + 1) + ". " + sanitiseText(content[albumCount].songs[songCount]);
                 td1.addEventListener('click', loadAndPlayFromListItem);
 
-                const download = document.createElement("a");
-                download.href = "music/" + content[albumCount].songs[songCount] + ".mp3";
-                download.innerHTML = "Download";
-                download.download = sanitiseText(content[albumCount].songs[songCount]) + ".mp3";
-                td2.appendChild(download);
+                if (!disableDownload) {
+                    const download = document.createElement("a");
+                    download.href = "music/" + content[albumCount].songs[songCount] + ".mp3";
+                    download.innerHTML = "Download";
+                    download.download = sanitiseText(content[albumCount].songs[songCount]) + ".mp3";
+                    td2.appendChild(download);
+                }
 
                 row.appendChild(td1);
                 row.appendChild(td2);

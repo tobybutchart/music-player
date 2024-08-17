@@ -145,11 +145,13 @@ for (const musicPlayer of musicPlayers) {
             td1.classList.add("song-list-item");
             td1.innerHTML = j + ". " + tracks[i].tracks[j];
 
-            const download = document.createElement("a");
-            download.href = "music/" + tracks[i].tracks[j] + ".mp3";
-            download.innerHTML = "Download";
-            download.download = "music/" + tracks[i].tracks[j] + ".mp3";
-            td2.appendChild(download);
+            if (!musicPlayer.dataset.disableDownload) {
+                const download = document.createElement("a");
+                download.href = "music/" + tracks[i].tracks[j] + ".mp3";
+                download.innerHTML = "Download";
+                download.download = "music/" + tracks[i].tracks[j] + ".mp3";
+                td2.appendChild(download);
+            }
 
             row.appendChild(td1);
             row.appendChild(td2);
